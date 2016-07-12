@@ -30,3 +30,8 @@ awk -F"," '{x+=$2}END{print x}' file
 
 # Sub-total of 2nd field where 1st column == 'Item1'
 awk -F, '$1=="Item1"{x+=$2;}END{print x}' file
+
+#####
+
+# Check if a specific file pattern exists
+if ls /path/*pattern*.log 1> /dev/null 2>&1; then echo "files do exist"; fi
